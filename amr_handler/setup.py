@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'diff_drive_node = amr_handler.diff_drive_node:main',
             'odometry_node = amr_handler.odometry_node:main',
+            'circle_motion_node = amr_handler.circle_motion_node:main',
         ],
     },
 )
