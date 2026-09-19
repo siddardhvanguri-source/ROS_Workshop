@@ -12,6 +12,7 @@
 
 - `workshop_demo`: beginner publisher/subscriber examples using ROS 2 topics.
 - `turtlebot3_controller`: TurtleBot3 `/cmd_vel` controller that continuously drives a circle in simulation.
+- `my_first_package`: generated ROS 2 Python package scaffold for future exercises.
 
 Each folder is a separate ROS 2 package. The package README files and source names provide the code labels; the sections below explain the theory, purpose, and function of each part.
 
