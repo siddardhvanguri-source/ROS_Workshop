@@ -14,6 +14,36 @@
 - `turtlebot3_controller`: TurtleBot3 `/cmd_vel` controller that continuously drives a circle in simulation.
 - `my_first_package`: generated ROS 2 Python package scaffold for future exercises.
 
+### Day 3: MoveIt 2 arm workspace
+
+- `IR52C_description`: IR52C arm URDF/Xacro model, meshes, and hardware description.
+- `ur5_description`: UR5 robot description used by the existing MoveIt example.
+- `ur5_gazebo`: Gazebo support for the UR5 arm.
+- `robotiq_description`: Robotiq gripper description assets.
+- `ur5_moveit_config`: MoveIt 2 planning, kinematics, controllers, and demo launch files.
+
+The IR52C model's terminal link is `tool_1` (with an underscore). Use that exact link when creating a MoveIt planning chain; `tool1` will not resolve in this URDF.
+
+## MoveIt 2 Jazzy setup
+
+MoveIt 2 is available from the Jazzy installation. Build the arm workspace from its source directory:
+
+```bash
+source /opt/ros/jazzy/setup.bash
+cd ~/arm_workspace
+rosdep install --from-paths src --ignore-src -r -y
+colcon build --symlink-install
+source ~/arm_workspace/install/setup.bash
+```
+
+The existing UR5 MoveIt demo can be launched with:
+
+```bash
+ros2 launch ur5_moveit_config moveit.launch.py
+```
+
+For a new IR52C configuration, run `ros2 run moveit_setup_assistant moveit_setup_assistant`, select `IR52C_description/urdf/arm.urdf.xacro`, create a fixed `world` to `base_link` virtual joint, and use `base_link` to `tool_1` for the planning chain. Generate the package under `arm_workspace/src/ros_workshop` and rebuild afterward.
+
 Each folder is a separate ROS 2 package. The package README files and source names provide the code labels; the sections below explain the theory, purpose, and function of each part.
 
 This project is a compact ROS 2 learning workspace for a mobile robot (AMR) and a robotics simulation setup. It is organized as a set of ROS packages, each responsible for one layer of the system:
