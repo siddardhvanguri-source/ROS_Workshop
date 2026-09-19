@@ -46,6 +46,8 @@ For a new IR52C configuration, run `ros2 run moveit_setup_assistant moveit_setup
 
 Each folder is a separate ROS 2 package. The package README files and source names provide the code labels; the sections below explain the theory, purpose, and function of each part.
 
+For the complete ROS 2 Jazzy TurtleBot3 slide-by-slide setup and Nav2 notes, see [docs/TURTLEBOT3_JAZZY_WORKSHOP.md](docs/TURTLEBOT3_JAZZY_WORKSHOP.md).
+
 This project is a compact ROS 2 learning workspace for a mobile robot (AMR) and a robotics simulation setup. It is organized as a set of ROS packages, each responsible for one layer of the system:
 
 - robot description and visualization
